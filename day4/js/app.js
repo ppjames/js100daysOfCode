@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const entryElement = document.getElementById('entry').value;
     const lastMessageElement = document.getElementById('last-message');
 
-    if (! entryElement) alert('entrada vacia'); 
+    if (! entryElement) {
+      console.log(">>> 1");
+      let alert = document.createElement('div');
+      alert.className = 'show';
+      alert.innerHTML = `Entrada vacia`;
+      document.querySelector('.box-content').append(alert);
 
+      setTimeout(() => alert.remove(), 2000);
+    }
     // clear input
     document.getElementById('entry').value = '';
 
